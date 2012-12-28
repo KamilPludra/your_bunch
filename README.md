@@ -4,5 +4,5 @@
 
  Temat pracy inżynierskiej: Serwis społecznościowy z wykorzystaniem Ruby on Rails.
 
- Promotorem pracy inżynierskiej jest dr inż. Krzysztof Bucholc.
+
 
