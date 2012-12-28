@@ -1,4 +1,9 @@
 YourBunch::Application.routes.draw do
+
+  get "strony_statyczne/home"
+
+  get "strony_statyczne/pomoc"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
