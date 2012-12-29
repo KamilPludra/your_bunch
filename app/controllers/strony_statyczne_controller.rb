@@ -7,4 +7,8 @@ class StronyStatyczneController < ApplicationController
 
   def onas
   end
+
+  def kontakt
+  end
+
 end
