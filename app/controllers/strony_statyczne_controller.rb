@@ -4,4 +4,7 @@ class StronyStatyczneController < ApplicationController
 
   def pomoc
   end
+
+  def onas
+  end
 end
