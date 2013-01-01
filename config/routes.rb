@@ -1,12 +1,14 @@
 YourBunch::Application.routes.draw do
 
-  get "strony_statyczne/home"
+  get "users/new"
 
-  get "strony_statyczne/pomoc"
+  root to: 'strony_statyczne#home'
 
-  get "strony_statyczne/onas"
+  match '/zarejestruj',  to: 'users#new'
 
-  get "strony_statyczne/kontakt"
+  match '/pomoc',    to: 'strony_statyczne#pomoc'
+  match '/onas',   to: 'strony_statyczne#onas'
+  match '/kontakt', to: 'strony_statyczne#kontakt'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

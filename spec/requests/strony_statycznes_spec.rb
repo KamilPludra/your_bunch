@@ -1,63 +1,35 @@
 require 'spec_helper'
 
 describe "Strony Statyczne" do
-  let(:base_title) { "Your Bunch" }
+
+  subject { page }
+
   describe "Strona glowna" do
+    before { visit root_path }
 
-    it "powinien miec h1 'Your Bunch'" do
-      visit '/strony_statyczne/home'
-      page.should have_selector('h1', :text => 'Your Bunch')
-    end
-
-    it "powinien miec tytul bazowy" do
-      visit '/strony_statyczne/home'
-      page.should have_selector('title', :text => "Your Bunch")
-    end
-
-    it "nie powinno miec wlasnego tytulu strony" do
-      visit '/strony_statyczne/home'
-      page.should_not have_selector('title', :text => '| Home')
-    end
+    it { should have_selector('h1',    text: 'Your Bunch') }
+    it { should have_selector('title', text: full_title('')) }
+    it { should_not have_selector 'title', text: '| Home' }
   end
 
+  describe "Strona pomocy" do
+    before { visit pomoc_path }
 
-describe "Strona pomocy " do
-
-    it "powinien miec h1 'Pomoc'" do
-      visit '/strony_statyczne/pomoc'
-      page.should have_selector('h1', :text => 'Pomoc')
-    end
-
-    it "powinien miec tytul 'Pomoc'" do
-      visit '/strony_statyczne/pomoc'
-      page.should have_selector('title', :text => "#{base_title} | Pomoc")
-    end
-end
-
+    it { should have_selector('h1',    text: 'Pomoc') }
+    it { should have_selector('title', text: full_title('Pomoc')) }
+  end
 
   describe "O stronie" do
+    before { visit onas_path }
 
-    it "powinien miec h1 'O nas'" do
-      visit '/strony_statyczne/onas'
-      page.should have_selector('h1', :text => 'O nas')
-    end
-
-    it "powinien miec tytul 'O nas'" do
-      visit '/strony_statyczne/onas'
-      page.should have_selector('title', :text => "#{base_title} | O nas")
-    end
+    it { should have_selector('h1',    text: 'O nas') }
+    it { should have_selector('title', text: full_title('O nas')) }
   end
 
-    describe "Strona Kontakt" do
+  describe "Strona Kontakt" do
+    before { visit kontakt_path }
 
-      it "powinien miec h1 'Kontakt'" do
-        visit '/strony_statyczne/kontakt'
-        page.should have_selector('h1', :text => 'Kontakt')
-      end
-
-      it "powinien miec tytul 'Kontakt'" do
-        visit '/strony_statyczne/kontakt'
-        page.should have_selector('title', :text => "#{base_title} | Kontakt")
-      end
+    it { should have_selector('h1',    text: 'Kontakt') }
+    it { should have_selector('title', text: full_title('Kontakt')) }
   end
 end
