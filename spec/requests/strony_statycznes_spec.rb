@@ -4,12 +4,36 @@ describe "Strony Statyczne" do
 
   subject { page }
 
+  shared_examples_for "wszystkie statyczne strony" do
+    it { should have_selector('h1',    text: heading) }
+    it { should have_selector('title', text: full_title(page_title)) }
+  end
+
+  it "powinna miec odpowiednie linki na stronie" do
+    visit root_path
+    click_link "O nas"
+    page.should have_selector 'title', text: full_title('O nas')
+    click_link "Pomoc"
+    page.should # fill in
+    click_link "Kontakt"
+    page.should # fill in
+    click_link "Home"
+    click_link "Zarejestruj"
+    page.should # fill in
+    click_link "Your Bunch"
+    page.should # fill in
+
+  end
+
   describe "Strona glowna" do
     before { visit root_path }
 
-    it { should have_selector('h1',    text: 'Your Bunch') }
-    it { should have_selector('title', text: full_title('')) }
+    let(:heading)    { 'Your Bunch' }
+    let(:page_title) { '' }
+
+    it_should_behave_like "wszystkie statyczne strony"
     it { should_not have_selector 'title', text: '| Home' }
+
   end
 
   describe "Strona pomocy" do
