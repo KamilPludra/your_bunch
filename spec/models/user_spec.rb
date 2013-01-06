@@ -9,6 +9,7 @@
 #  updated_at :datetime         not null
 #
 
+# encoding: utf-8
 require 'spec_helper'
 
 describe User do
@@ -53,9 +54,9 @@ describe User do
 
   describe "kiedy format email jest nieprawidlowy" do
     it "should be invalid" do
-      addresses = %w[kamil@wer,com kamil_at_wer.org kamil.pludra@wsd.
+      adresx = %w[kamil@wer,com kamil_at_wer.org kamil.pludra@wsd.
                      kamil@pln_kmn.com kamil@okm+tgb.com]
-      addresses.each do |invalid_address|
+      adresx.each do |invalid_address|
         @user.email = invalid_address
         @user.should_not be_valid
       end
@@ -64,8 +65,8 @@ describe User do
 
   describe "kiedy format email jest prawidlowy" do
     it "powinien byc przyjety" do
-      addresses = %w[kamil@mail.COM K_PLUD-RA@a.b.org kamil.pludra@wer.jp x+y@wsd.cn]
-      addresses.each do |valid_address|
+      adresx = %w[kamil@mail.COM K_PLUD-RA@a.b.org kamil.pludra@wer.jp x+y@wsd.cn]
+      adresx.each do |valid_address|
         @user.email = valid_address
         @user.should be_valid
       end
@@ -74,9 +75,9 @@ describe User do
 
   describe "gdy adres email jest juz zajety" do
     before do
-      user_with_same_email = @user.dup
-      user_with_same_email.email = @user.email.upcase
-      user_with_same_email.save
+      taki_sam_email = @user.dup
+      taki_sam_email.email = @user.email.upcase
+      taki_sam_email.save
     end
 
     it { should_not be_valid }
@@ -106,17 +107,27 @@ describe User do
 
   describe "zwroci wartosc metody uwierzytelniania" do
     before { @user.save }
-    let(:found_user) { User.find_by_email(@user.email) }
+    let(:znaleziono_uzytkownika) { User.find_by_email(@user.email) }
 
     describe "z prawidlowym haslem" do
-      it { should == found_user.authenticate(@user.password) }
+      it { should == znaleziono_uzytkownika.authenticate(@user.password) }
     end
 
     describe "z nieprawidlowym haslem" do
-      let(:user_for_invalid_password) { found_user.authenticate("nieprawidlowym") }
+      let(:uzytkownikZnieprawilowym_hasle) { znaleziono_uzytkownika.authenticate("nieprawidlowym") }
 
-      it { should_not == user_for_invalid_password }
-      specify { user_for_invalid_password.should be_false }
+      it { should_not == uzytkownikZnieprawilowym_hasle }
+      specify { uzytkownikZnieprawilowym_hasle.should be_false }
+    end
+  end
+
+  describe "adres email w mieszanej wilokosci liter" do
+    let(:mieszany_email) { "Kamil@PlUdRa.CoM" }
+
+    it "powinien byc zapisany caly malymi literami" do
+      @user.email = mieszany_email
+      @user.save
+      @user.reload.email.should == mieszany_email.downcase
     end
   end
 
