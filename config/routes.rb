@@ -1,10 +1,14 @@
 YourBunch::Application.routes.draw do
 
   resources :users
-
-  root to: 'strony_statyczne#home'
+  resources :sessions, only: [:new, :create, :destroy]
 
   match '/zarejestruj',  to: 'users#new'
+  match '/zaloguj',  to: 'sessions#new'
+  match '/wyloguj', to: 'sessions#destroy', via: :delete
+
+
+  root to: 'strony_statyczne#home'
 
   match '/pomoc',    to: 'strony_statyczne#pomoc'
   match '/onas',   to: 'strony_statyczne#onas'

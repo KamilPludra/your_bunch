@@ -35,16 +35,27 @@ describe "Strony uzytkownikow" do
       end
     end
 
+    describe "po zapisaniu instrukcji" do
+      before { click_button zarejestruj }
+
+      it { should have_selector('title', text: 'Zarejestruj się') }
+      it { should have_content('error') }
+
+    end
+
     describe "z prwidlowej informacji" do
       before do
         fill_in "Imię i nazwisko",          with: "Przykladowy Uzytkownik"
         fill_in "Twój adres e-mail",        with: "przykladowy@uzytkownik.pl"
         fill_in "Hasło",                    with: "pludra"
         fill_in "Wprowadź ponownie hasło",  with: "pludra"
+
       end
 
       it "nalezy utworzyc uzytkownika" do
         expect { click_button zarejestruj }.to change(User, :count).by(1)
+
+        # it { should have_link('Wyloguj się') }
       end
     end
   end
