@@ -4,6 +4,12 @@
 # encoding: utf-8
 en:
 
+  will_paginate:
+
+          previous_label: "&#8592; Wstecz"
+          next_label: "Następny &#8594;"
+          page_gap: "&hellip;"
+
   activerecord:
     attributes:
 
