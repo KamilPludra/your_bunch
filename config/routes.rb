@@ -1,7 +1,8 @@
 YourBunch::Application.routes.draw do
 
   resources :users
-  resources :sessions, only: [:new, :create, :destroy]
+  resources :sessions,   only: [:new, :create, :destroy]
+  resources :microposts, only: [:create, :destroy]
 
   match '/zarejestruj',  to: 'users#new'
   match '/zaloguj',  to: 'sessions#new'

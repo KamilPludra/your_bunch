@@ -1,0 +1,11 @@
+<li>
+  <span class="content"><%= micropost.content %></span>
+  <span class="timestamp">
+    Wysłany <%= time_ago_in_words(micropost.created_at) %> temu.
+  </span>
+  <% if current_user?(micropost.user) %>
+    <%= link_to "Usuń", micropost, method: :delete,
+                data: { confirm: "Jesteś pewien?" },
+                title: micropost.content %>
+  <% end %>
+</li>

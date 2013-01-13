@@ -6,8 +6,6 @@ class UsersController < ApplicationController
   before_filter :admin_user,     only: :destroy
 
 
-
-
   def index
     @users = User.paginate(page: params[:page])
   end
@@ -16,7 +14,9 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @microposts = @user.microposts.paginate(page: params[:page])
   end
+
 
   def new
     @user = User.new
@@ -40,7 +40,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update_attributes(params[:user])
-      flash[:success] = "Profil zaktualizowany"
+      flash[:success] = "Profil zaktualizowany."
       sign_in @user
       redirect_to @user
     else
@@ -73,6 +73,11 @@ class UsersController < ApplicationController
   def admin_user
     redirect_to(root_path) unless current_user.admin?
   end
+
+
+
+
+
 end
 
 

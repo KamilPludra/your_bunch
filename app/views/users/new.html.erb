@@ -4,8 +4,8 @@
 <div class="row">
   <div class="span6 offset3">
     <%= form_for(@user) do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
 
-        <%= render 'shared/error_messages' %>
 
         <%= f.label :name, "Imię i nazwisko" %>
         <%= f.text_field :name %>
@@ -18,8 +18,11 @@
 
         <%= f.label :password_confirmation, "Wprowadź ponownie hasło" %>
         <%= f.password_field :password_confirmation %>
+
         <br>
         <%= f.submit "Utwórz konto", class: "btn btn-large btn-primary" %>
+
+
     <% end %>
   </div>
 </div>

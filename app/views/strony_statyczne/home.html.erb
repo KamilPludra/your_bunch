@@ -1,4 +1,26 @@
-  <div class="center hero-unit">
+<% if signed_in? %>
+    <div class="row">
+    <aside class="span4">
+      <section>
+        <%= render 'shared/user_info' %>
+      </section>
+      <section>
+        <%= render 'shared/micropost_form' %>
+      </section>
+    </aside>
+
+
+
+     <div class="span8">
+      <h3>Moje wiadomości: </h3>
+            <%= render 'shared/feed' %>
+    </div>
+  </div>
+<% else %>
+
+    <div class="center hero-unit">
+
+
      <h1>Witamy w <i>Your Bunch</i></h1>
 
      <h2>
@@ -12,3 +34,5 @@
 
    </div>
 
+
+<% end %>
