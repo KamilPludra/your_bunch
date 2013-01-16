@@ -1,8 +1,20 @@
 YourBunch::Application.routes.draw do
 
-  resources :users
+
+  get "password_resets/new"
+
+  resources :users do
+    member do
+      get :following, :followers
+
+    end
+  end
+
+
   resources :sessions,   only: [:new, :create, :destroy]
   resources :microposts, only: [:create, :destroy]
+
+  resources :relationships, only: [:create, :destroy]
 
   match '/zarejestruj',  to: 'users#new'
   match '/zaloguj',  to: 'sessions#new'

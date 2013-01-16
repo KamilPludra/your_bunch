@@ -1,4 +1,33 @@
+
+$linkColor: #571B7e;
+$baseFontSize: 16px;
+
+$myOrange:#f89406;
+$myBlueDark: #304269;
+$myBlue: #91BED4;
+$myBlueLight: #D9E8F5;
+$myWhite: #eee;
+$myGrayBlue: #43464C;
+
+$heroUnitBackground: lighten($myWhite, 20);
+
+
+
+
 @import "bootstrap";
+
+
+
+body {
+  padding-top: 60px;
+  background-color: $myBlueLight;
+
+
+}
+
+
+
+
 
 /******  Zmienne itp. ******/
 
@@ -9,6 +38,10 @@ $grayMediumLight: #eaeaea;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
+
+
+
+
 
 /****** Uniwersalne ******/
 
@@ -84,6 +117,37 @@ p {
 /****** footer / stopka ******/
 
 footer {
+  font-size: 16px;
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid #A80000;
+  color: $grayLight;
+  a {
+    color: $linkColorHover;
+    &:hover {
+      color: $grayDarker;
+    }
+  }
+  small {
+    float: left;
+    font-size: 16px;
+  }
+  ul {
+    float: right;
+    list-style: none;
+    li {
+      float: left;
+      margin-left: 10px;
+      font-size: 16px;
+
+    }
+  }
+
+}
+
+
+
+logga{
   margin-top: 45px;
   padding-top: 5px;
   border-top: 1px solid $grayMediumLight;
@@ -147,6 +211,38 @@ footer {
     float: left;
     margin-right: 10px;
   }
+
+
+.stats {
+  overflow: auto;
+  a {
+    float: left;
+    padding: 0 10px;
+    border-left: 1px solid $grayLighter;
+    color: gray;
+    &:first-child {
+      padding-left: 0;
+      border: 0;
+    }
+    &:hover {
+      text-decoration: none;
+      color: $blue;
+    }
+  }
+  strong {
+    display: block;
+  }
+}
+
+.user_avatars {
+  overflow: auto;
+  margin-top: 10px;
+  .gravatar {
+    margin: 1px 1px;
+  }
+}
+
+
 
 /******  formularze rejestracji ******/
 
@@ -218,4 +314,16 @@ aside {
     height: 100px;
     margin-bottom: 5px;
   }
+}
+
+
+/******  justowanie  ******/
+
+.fulljustify {
+  text-align:justify;
+}
+.fulljustify:after {
+  content: "";
+  display: inline-block;
+  width: 100%;
 }

@@ -5,14 +5,16 @@
         <%= render 'shared/user_info' %>
       </section>
       <section>
+        <%= render 'shared/stats' %>
+      </section>
+      <section>
         <%= render 'shared/micropost_form' %>
       </section>
     </aside>
 
 
-
      <div class="span8">
-      <h3>Moje wiadomości: </h3>
+      <h3>Wszystkie wiadomości: </h3>
             <%= render 'shared/feed' %>
     </div>
   </div>
@@ -24,15 +26,39 @@
      <h1>Witamy w <i>Your Bunch</i></h1>
 
      <h2>
-       To jest strona główna serwisu społecznościowego, który jest pracą inżynierską:<br> Kamila Pludry. <br>
-       Promotorem pracy inżynierskiej jest: <br> dr inż. Krzysztof Bucholc.
+       To jest strona główna serwisu społecznościowego "Your Bunch".<br>
+       Serwis jest pracą inżynierską, którego autorem jest:<br>
+       Kamil Pludra.<br>
+       Promotorem pracy inżynierskiej jest:<br>
+       dr inż. Krzysztof Bucholc.
+
+
      </h2>
 
      <%= link_to "Zarejestruj się!", zarejestruj_path, class: "btn btn-large btn-primary" %>
     <br><br>
-    <%= link_to image_tag("/zarajestruj_sie.png", alt: "Zarajestruj sie"), zarejestruj_path %>
+    <%= link_to image_tag("/Your-Bunch.png", alt: "Zarajestruj sie"), zarejestruj_path %>
+
+    <br>
+    <br>
+
+      <!-- <a href="http://www.put.poznan.pl/">Politechnika Poznańska</a>
+           -->
 
    </div>
+
+    <div>
+
+           <p id="tagline" class="fulljustify">
+
+            <%= link_to image_tag("/PP.png", alt: "Politechnika Poznańska"), "http://www.put.poznan.pl/" %>
+
+             <%= link_to image_tag("/IAII.png", alt: "Instytut Automatyki i Inżynierii Informatycznej"), "http://www.cie.put.poznan.pl/" %>
+
+             <%= link_to image_tag("/WE.png", alt: "Wydział Elektryczny Politechniki Poznańskiej"), "http://www.fee.put.poznan.pl/" %>
+
+           </p>
+     </div>
 
 
 <% end %>

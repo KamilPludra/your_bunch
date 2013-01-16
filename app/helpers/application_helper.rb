@@ -10,4 +10,11 @@ module ApplicationHelper
     end
   end
 
+
+
+  def format_text(text)
+    RedCloth.new(text).to_html(:textile, :glyphs_smilies)
+  end
+
+
 end
