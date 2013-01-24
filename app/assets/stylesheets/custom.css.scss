@@ -1,5 +1,7 @@
 
 $linkColor: #571B7e;
+$linkColorHover: #00bfff;
+
 $baseFontSize: 16px;
 
 $myOrange:#f89406;
@@ -8,7 +10,6 @@ $myBlue: #91BED4;
 $myBlueLight: #D9E8F5;
 $myWhite: #eee;
 $myGrayBlue: #43464C;
-
 
 
 @font-face {
@@ -130,9 +131,9 @@ footer {
   border-top: 1px solid #571B7e;
   color: $grayLight;
   a {
-    color: $linkColorHover;
+    color: #571B7e;
     &:hover {
-      color: black;
+      color: #00bfff;
     }
   }
   small {
