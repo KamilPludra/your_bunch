@@ -12,13 +12,13 @@ $myGrayBlue: #43464C;
 
 
 @font-face {
-  font-family: 'mvboli';
-  src: local('mvboli'), url(mvboli.ttf) format("truetype")
+  font-family: 'OMGWriteLikeWilliam';
+  src: local('OMGWriteLikeWilliam'), url(mvboli.ttf) format("truetype")
 }
 
 
 $heroUnitBackground: lighten($myWhite, 20);
-/** $sansFontFamily: 'MV Boli';      */
+$sansFontFamily: 'OMGWriteLikeWilliam';
 
 
 
@@ -132,7 +132,7 @@ footer {
   a {
     color: $linkColorHover;
     &:hover {
-      color: $grayDarker;
+      color: black;
     }
   }
   small {
@@ -158,11 +158,11 @@ logga{
   margin-top: 45px;
   padding-top: 5px;
   border-top: 1px solid $grayMediumLight;
-  color: $grayLight;
+  color: #571B7e;
   a {
     color: $linkColorHover;
     &:hover {
-      color: $grayDarker;
+      color: #571B7e;
     }
   }
   small {
@@ -224,9 +224,10 @@ logga{
   overflow: auto;
   a {
     float: left;
-    padding: 0 10px;
-    border-left: 1px solid $grayLighter;
-    color: gray;
+    padding: 0 15px;
+    font-size: 13px;
+    border-left: 1px solid #571B7e;
+    color: #571B7e;
     &:first-child {
       padding-left: 0;
       border: 0;
