@@ -3,22 +3,40 @@
     <div class="container">
       <%= link_to image_tag("/your_bunch.png", alt: "Your Bunch"), root_path, id: "logo" %>
 
-     <!--
+      <!--
      <%= link_to "Your Bunch", root_path, id: "logo" %>
      http://studioczapla.boo.pl/YOUR_BUNCH/
      -->
 
       <nav>
-        <ul class="nav pull-right">
-          <li><%= link_to "Home", root_path %></li>
-          <li><%= link_to "Pomoc", pomoc_path %></li>
 
-          <% if signed_in? %>
-            <li><%= link_to "Użytkownicy", users_path %></li>
+
+        <ul class="nav pull-right">
+
+           <ul class="nav nav-pills">
+    <li class="active"> <%= link_to "Home", root_path %></li>
+    <li class="active"><%= link_to "Pomoc", pomoc_path %></li>
+
+             <% if signed_in? %>
+
+    <li class="active"><%= link_to "Użytkownicy", users_path %></li>
+
+                 </ul>
+
+
             <li id="fat-menu" class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                Konto <b class="caret"></b>
-              </a>
+
+
+
+
+            <div class="btn-group">
+        <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+        Konto
+        <span class="caret"></span>
+
+        </a>
+
+
               <ul class="dropdown-menu">
                 <li><%= link_to "Profil", current_user %></li>
                 <li><%= link_to "Ustawienia", edit_user_path(current_user) %></li>
@@ -27,11 +45,15 @@
                   <%= link_to "Wyloguj się", wyloguj_path, method: "delete" %>
                 </li>
               </ul>
+                  </div>
             </li>
           <% else %>
-            <li><%= link_to "Zaloguj się", zaloguj_path %></li>
+            <li class="active"><%= link_to "Zaloguj się", zaloguj_path %></li>
           <% end %>
+
         </ul>
+
+
       </nav>
     </div>
   </div>

@@ -11,6 +11,15 @@ $myBlueLight: #D9E8F5;
 $myWhite: #eee;
 $myGrayBlue: #43464C;
 
+.pull-right {
+  color: #571B7e;
+}
+
+.someclass{color: #571B7e}
+
+.pull-right {color: #571B7e}
+
+ul.pull-right li a {color: #571B7e}
 
 @font-face {
   font-family: 'OMGWriteLikeWilliam';
@@ -107,6 +116,7 @@ p {
 /****** Logo / header******/
 
 #logo {
+  linkColor: #571B7e;
   float: left;
   margin-right: 10px;
   font-size: 1.9em;
