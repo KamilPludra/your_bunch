@@ -21,6 +21,43 @@ $myGrayBlue: #43464C;
 
 ul.pull-right li a {color: #571B7e}
 
+
+//.btn-group {
+ // linkColor: #571B7e;
+ // linkColorHover: #00bfff;
+ // float: left;
+
+ // color: #00bfff;
+ // text-transform: uppercase;
+ // letter-spacing: -1px;
+ // padding-top: 7px;
+  //font-weight: bold;
+ /// line-height: 1;
+ // &:hover {
+//    color: #00bfff;
+//    text-decoration: none;
+//  }
+//}
+
+//.active {
+//  linkColor: #571B7e;
+//  linkColorHover: #00bfff;
+//  float: left;
+//
+////  color: #00bfff;
+//  text-transform: uppercase;
+  //letter-spacing: -1px;
+  //padding-top: 7px;
+//  font-weight: bold;
+ // line-height: 1;
+ // &:hover {
+  //  color: #00bfff;
+   // text-decoration: none;
+ // }
+//}
+
+
+
 @font-face {
   font-family: 'OMGWriteLikeWilliam';
   src: local('OMGWriteLikeWilliam'), url(mvboli.ttf) format("truetype")
@@ -117,6 +154,7 @@ p {
 
 #logo {
   linkColor: #571B7e;
+  linkColorHover: #00bfff;
   float: left;
   margin-right: 10px;
   font-size: 1.9em;
@@ -127,7 +165,7 @@ p {
   font-weight: bold;
   line-height: 1;
   &:hover {
-    color: white;
+    color: #00bfff;
     text-decoration: none;
   }
 }

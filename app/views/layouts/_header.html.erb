@@ -8,53 +8,70 @@
      http://studioczapla.boo.pl/YOUR_BUNCH/
      -->
 
-      <nav>
+     <nav>
 
 
-        <ul class="nav pull-right">
+       <ul class="nav pull-right">
 
            <ul class="nav nav-pills">
-    <li class="active"> <%= link_to "Home", root_path %></li>
-    <li class="active"><%= link_to "Pomoc", pomoc_path %></li>
-
-             <% if signed_in? %>
-
-    <li class="active"><%= link_to "Użytkownicy", users_path %></li>
-
-                 </ul>
 
 
-            <li id="fat-menu" class="dropdown">
-
-
-
-
-            <div class="btn-group">
-        <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-        Konto
-        <span class="caret"></span>
-
-        </a>
-
-
-              <ul class="dropdown-menu">
-                <li><%= link_to "Profil", current_user %></li>
-                <li><%= link_to "Ustawienia", edit_user_path(current_user) %></li>
-                <li class="divider"></li>
-                <li>
-                  <%= link_to "Wyloguj się", wyloguj_path, method: "delete" %>
+                <li class="active">
+                    <div class="btn-group">
+                        <a class="btn dropdown-toggle"  href="<%= root_path %>">Home</a>
+                    </div>
                 </li>
-              </ul>
-                  </div>
-            </li>
-          <% else %>
-            <li class="active"><%= link_to "Zaloguj się", zaloguj_path %></li>
-          <% end %>
+
+
+                <li class="active">
+                    <div class="btn-group">
+                        <a class="btn dropdown-toggle"  href="<%= pomoc_path %>">Pomoc</a>
+                    </div>
+                </li>
+
+
+                <% if signed_in? %>
+
+                <li class="active">
+                    <div class="btn-group">
+                        <a class="btn dropdown-toggle"  href="<%= users_path %>">Użytkownicy</a>
+                    </div>
+                </li>
+
+           </ul>
+
+
+
+           <li id="fat-menu" class="dropdown">
+
+                <div class="btn-group">
+                    <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+                        Konto
+                        <span class="caret"></span>
+                    </a>
+
+                      <ul class="dropdown-menu">
+                        <li><%= link_to "Profil", current_user %></li>
+                        <li><%= link_to "Ustawienia", edit_user_path(current_user) %></li>
+                        <li class="divider"></li>
+                        <li><%= link_to "Wyloguj się", wyloguj_path, method: "delete" %></li>
+                      </ul>
+                </div>
+           </li>
+
+
+              <% else %>
+                <li class="active">
+                    <div class="btn-group">
+                        <a class="btn dropdown-toggle"  href="<%= zaloguj_path %>">Zaloguj się</a>
+                    </div>
+                </li>
+              <% end %>
 
         </ul>
 
 
-      </nav>
+     </nav>
     </div>
   </div>
 </header>
