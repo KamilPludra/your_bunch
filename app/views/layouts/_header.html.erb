@@ -1,15 +1,11 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
   <div class="navbar-inner">
     <div class="container">
-      <%= link_to image_tag("/your_bunch.png", alt: "Your Bunch"), root_path, id: "logo" %>
+     <%= link_to image_tag("/your_bunch.png", alt: "Your Bunch"), root_path, id: "logo" %>
 
-      <!--
-     <%= link_to "Your Bunch", root_path, id: "logo" %>
-     http://studioczapla.boo.pl/YOUR_BUNCH/
-     -->
+
 
      <nav>
-
 
        <ul class="nav pull-right">
 
@@ -18,14 +14,16 @@
 
                 <li class="active">
                     <div class="btn-group">
-                        <a class="btn dropdown-toggle"  href="<%= root_path %>">Home</a>
+                        <a class="btn dropdown-toggle"  href="<%= root_path %>">
+                          Home</a>
                     </div>
                 </li>
 
 
                 <li class="active">
                     <div class="btn-group">
-                        <a class="btn dropdown-toggle"  href="<%= pomoc_path %>">Pomoc</a>
+                        <a class="btn dropdown-toggle"  href="<%= pomoc_path %>">
+                          Pomoc</a>
                     </div>
                 </li>
 
@@ -34,13 +32,12 @@
 
                 <li class="active">
                     <div class="btn-group">
-                        <a class="btn dropdown-toggle"  href="<%= users_path %>">Użytkownicy</a>
+                        <a class="btn dropdown-toggle"  href="<%= users_path %>">
+                          Użytkownicy</a>
                     </div>
                 </li>
 
            </ul>
-
-
 
            <li id="fat-menu" class="dropdown">
 
@@ -59,18 +56,16 @@
                 </div>
            </li>
 
-
               <% else %>
                 <li class="active">
                     <div class="btn-group">
-                        <a class="btn dropdown-toggle"  href="<%= zaloguj_path %>">Zaloguj się</a>
+                        <a class="btn dropdown-toggle"  href="<%= zaloguj_path %>">
+                          Zaloguj się</a>
                     </div>
                 </li>
               <% end %>
 
         </ul>
-
-
      </nav>
     </div>
   </div>

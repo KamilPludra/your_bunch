@@ -12,7 +12,6 @@
 # encoding: utf-8
 
 require 'spec_helper'
-# encoding: utf-8
 
 describe User do
 
@@ -169,7 +168,7 @@ describe User do
 
 
 
-  describe "micropost associations" do
+  describe "widomosci" do
 
     before { @user.save }
     let!(:older_micropost) do
@@ -179,12 +178,12 @@ describe User do
       FactoryGirl.create(:micropost, user: @user, created_at: 1.hour.ago)
     end
 
-    it "should have the right microposts in the right order" do
+    it "owinien mieć prawo microposts w odpowiedniej kolejnośc" do
       @user.microposts.should == [newer_micropost, older_micropost]
     end
 
 
-    it "should destroy associated microposts" do
+    it "powinny zniszczyć" do
       microposts = @user.microposts.dup
       @user.destroy
       microposts.should_not be_empty
@@ -217,7 +216,7 @@ describe User do
   end
 
 
-  describe "following" do
+  describe "sledza" do
     let(:other_user) { FactoryGirl.create(:user) }
     before do
       @user.save
@@ -227,13 +226,13 @@ describe User do
     it { should be_following(other_user) }
     its(:followed_users) { should include(other_user) }
 
-    describe "followed user" do
+    describe "sledzenie uzytkownicy" do
       subject { other_user }
       its(:followers) { should include(@user) }
     end
 
 
-    describe "and unfollowing" do
+    describe "nie sledzeni" do
       before { @user.unfollow!(other_user) }
 
       it { should_not be_following(other_user) }

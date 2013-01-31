@@ -10,8 +10,8 @@ describe Relationship do
 
   it { should be_valid }
 
-  describe "accessible attributes" do
-    it "should not allow access to follower_id" do
+  describe "dostępne atrybuty" do
+    it "nie powinny umożliwić dostęp do follower_id" do
       expect do
         Relationship.new(follower_id: follower.id)
       end.to raise_error(ActiveModel::MassAssignmentSecurity::Error)
@@ -19,7 +19,7 @@ describe Relationship do
   end
 
 
-  describe "follower methods" do
+  describe "metody zwolennik" do
     it { should respond_to(:follower) }
     it { should respond_to(:followed) }
     its(:follower) { should == follower }
@@ -27,12 +27,12 @@ describe Relationship do
   end
 
 
-  describe "when followed id is not present" do
+  describe "gdy po id nie jest obecny" do
     before { relationship.followed_id = nil }
     it { should_not be_valid }
   end
 
-  describe "when follower id is not present" do
+  describe "gdy id wyznawca nie jest obecny" do
     before { relationship.follower_id = nil }
     it { should_not be_valid }
   end

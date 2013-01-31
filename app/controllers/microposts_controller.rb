@@ -10,13 +10,6 @@ class MicropostsController < ApplicationController
       flash[:success] = "Wiadomość utworzona!"
       redirect_to root_url
 
-
-     # respond_to do |format|
-      #  format.html { redirect_to @user }
-       # format.js
-      #end
-
-
     else
       @feed_items = []
       render 'strony_statyczne/home'
