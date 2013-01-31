@@ -11,3 +11,9 @@
  *= require_self
  *= require_tree .
  */
+
+body {
+    font-family: 'Comic Sans MS', Fallback, sans-serif;
+    font-style: italic;
+}
+
