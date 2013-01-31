@@ -14,6 +14,7 @@ gem 'jquery-rails', '2.0.2'
 gem "polish", ">= 0.1.0"
 
 gem "bbcodeizer", "~> 0.2.0"
+gem "browser"
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
