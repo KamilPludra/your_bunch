@@ -58,14 +58,14 @@ ul.pull-right li a {color: #571B7e}
 
 
 
-
-@import url(http://fonts.googleapis.com/css?family=Indie+Flower);
-
+@font-face {
+  font-family: 'OMGWriteLikeWilliam';
+  src: local('OMGWriteLikeWilliam'), url(OMGWriteLikeWilliam.eot) format("truetype")
+}
 
 
 $heroUnitBackground: lighten($myWhite, 20);
-$sansFontFamily: 'Indie Flower';
-
+$sansFontFamily: 'OMGWriteLikeWilliam';
 
 
 
